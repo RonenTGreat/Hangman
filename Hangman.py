@@ -27,8 +27,23 @@ def play_game():
         print("Thank you for playing the game!")
 
 def get_word():
+
     """This function generates a random word from the list below"""
 
     words = ['car', 'phone', 'red', 'yellow', 'python', 'wheel']
 
     return random.choice(words).lower()
+
+def game_run():
+
+    """This function starts the game play"""
+    welcome()
+
+    alphabet = ('abcdefghijklmnopqrstuvwxyz')
+    guessedWord = get_word()
+    guessedLetters = []
+    tries = 7;
+    guessed = False
+    print()
+    print("The word is a ", len(word), "letter word.")
+    print(len(word) * '_')
