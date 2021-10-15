@@ -14,7 +14,16 @@ def welcome():
             print(f"""Hi {name}. You will play against a computer.\nThe computer will randomly choose a word and you will have to try to guess the word.\nGood Luck!""" )
             break
 
-#
 
+def play_game():
+    """This function asks the user if he/she wants to play the hangman game again"""
 
-welcome()
+    print("Would like to play the game again? Enter 'Y' for Yes or 'N' for No.")
+    response = input(">>").lower()
+
+    if response == 'y':
+        game_run()
+    else:
+        print("Thank you for playing the game!")
+
+def
