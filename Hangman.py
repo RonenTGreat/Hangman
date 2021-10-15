@@ -26,4 +26,9 @@ def play_game():
     else:
         print("Thank you for playing the game!")
 
-def
+def get_word():
+    """This function generates a random word from the list below"""
+
+    words = ['car', 'phone', 'red', 'yellow', 'python', 'wheel']
+
+    return random.choice(words).lower()
