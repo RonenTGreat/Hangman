@@ -40,10 +40,13 @@ def game_run():
     welcome()
 
     alphabet = ('abcdefghijklmnopqrstuvwxyz')
-    guessedWord = get_word()
+    word = get_word()
     guessedLetters = []
     tries = 7;
     guessed = False
     print()
     print("The word is a ", len(word), "letter word.")
     print(len(word) * '_')
+    while guessed == False and tries > 0:
+        print("You have ", tries, "tries.")
+        
