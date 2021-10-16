@@ -15,7 +15,7 @@ def welcome():
             break
 
 
-def play_game():
+def play_again():
     """This function asks the user if he/she wants to play the hangman game again"""
 
     print("Would like to play the game again? Enter 'Y' for Yes or 'N' for No.")
@@ -49,4 +49,48 @@ def game_run():
     print(len(word) * '_')
     while guessed == False and tries > 0:
         print("You have ", tries, "tries.")
-        
+        guess = input("Guess a letter in the word or enter the full word: \n").lower()
+
+        if len(guess) == 1:
+            if guess not in alphabet:
+                print("You are yet to enter a letter. Check your entry, make sure you enter an alphabet not a number or a symbol.")
+            elif guess in guessedLetters:
+                print("You have already guessed that letter before. Try again!")
+            elif guess not in word:
+                print("Sorry, that letter is not part of the word.")
+                guessedLetters.append(guess)
+                tries -= 1
+            elif guess in word:
+                print("Nice, that letter exists in the word")
+                guessedLetters.append(guess)
+            else:
+                print("Check your entry! You might made a mistake.")
+                
+        elif len(guess) == len(word):
+            if guess == word:
+                print("Wow! You guessed the word correctly.")
+                guessed = True
+            else:
+                print("Sorry, that was not the word we were looking for.")
+                tries -= 1
+        else:
+            print("The length of your guess is not the same as the length of the correct word.")
+            tries -= 1
+            
+        status = ''
+        if guessed == False:
+            for letter in word:
+                if letter in guessedLetters:
+                    status += letter
+                else:
+                    status += '_'
+            print(status)
+
+            if status == word:
+                print("Great Job! You guessed the word correctly!")
+                guessed = True
+            elif tries == 0:
+                print("Sorryyy! You have run out of guesses :(")
+    play_again()
+
+game_run()
