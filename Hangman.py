@@ -3,9 +3,22 @@ import random
 def welcome():
     "This functon welcomes the user and prompts him/her to enter his name  But makes sure he/she enters just letters and not numbers."
     while True:
+        print("""=============================================================================\n88                                                                            
+88                                                                            
+88                                                                            
+88,dPPYba,  ,adPPYYba, 8b,dPPYba,   ,adPPYb,d8 88,dPYba,,adPYba,  ,adPPYYba,  
+88P'    "8a ""     `Y8 88P'   `"8a a8"    `Y88 88P'   "88"    "8a ""     `Y8  
+88       88 ,adPPPPP88 88       88 8b       88 88      88      88 ,adPPPPP88  
+88       88 88,    ,88 88       88 "8a,   ,d88 88      88      88 88,    ,88  
+88       88 `"8bbdP"Y8 88       88  `"YbbdP"Y8 88      88      88 `"8bbdP"Y8  
+                                    aa,    ,88                                
+                                     "Y8bbdP"                                 
+             
+             
+===================================================================================""")
         print("Welcome to Hangman Game!")
         print("Hi, please enter your name.")
-        name = input(">>").capitalize()
+        name = input(">> ").capitalize()
         # Makes sure the user only enters letters
         if not name.isalpha():
             print("Numbers are not suppose to be in your name.")
