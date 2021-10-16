@@ -43,7 +43,13 @@ def get_word():
 
     """This function generates a random word from the list below"""
 
-    words = ['car', 'phone', 'red', 'yellow', 'python', 'wheel']
+    words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
+             'coyote crow deer dog donkey duck eagle ferret fox frog goat '
+             'goose hawk lion lizard llama mole monkey moose mouse mule newt '
+             'otter owl panda parrot pigeon python rabbit ram rat raven '
+             'rhino salmon seal shark sheep skunk sloth snake spider '
+             'stork swan tiger toad trout turkey turtle weasel whale wolf '
+             'wombat zebra ').split()
 
     return random.choice(words).lower()
 
@@ -58,8 +64,8 @@ def game_run():
     tries = 7;
     guessed = False
     print()
-    print("The word is a ", len(word), "letter word.")
-    print(len(word) * '_')
+    print("Guess the animal ;)")
+    print(len(word) * '_  ')
     while guessed == False and tries > 0:
         print("You have ", tries, "tries.")
         guess = input("Guess a letter in the word or enter the full word: \n").lower()
